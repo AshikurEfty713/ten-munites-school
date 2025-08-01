@@ -2,7 +2,6 @@
 
 import { useState } from "react"
 import { Search, Phone, ChevronDown, Menu, X } from "lucide-react"
-import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import tenMunitesLogo from "../../../public/images/10mslogo.svg"
 import Image from "next/image"

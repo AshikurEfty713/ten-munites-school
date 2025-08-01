@@ -14,7 +14,7 @@ type Course = {
 } | null;
 
 const Banner = () => {
-  const {course, loading, error} = UseCourseHooks() as { course: Course | null, loading: boolean, error: any };
+  const {course} = UseCourseHooks() as { course: Course | null};
   const [showItem, setShowItem] = useState(true);
   const closeBanner = () => {
     setShowItem(false);

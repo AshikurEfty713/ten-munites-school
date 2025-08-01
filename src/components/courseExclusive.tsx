@@ -22,7 +22,7 @@ interface Course {
 }
 
 export default function CourseExclusive() {
-  const { course, loading, error } = UseCourseHooks() as { course: Course | null; loading: boolean; error: any }
+  const { course} = UseCourseHooks() as { course: Course | null}
 
   const exclusiveSection = course?.sections?.find((section) => section.type === "feature_explanations")
   const exclusiveInfo = exclusiveSection?.values || []

@@ -5,7 +5,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useRef } from "react";
-import UseCourseHooks from "@/hooks/useCourseHooks";
 import similarImg1 from "../../public/images/similar1.jpg";
 import similarImg2 from "../../public/images/similar2.jpg";
 import similarImg3 from "../../public/images/similar3.jpg";
@@ -24,7 +23,6 @@ interface Course {
 }
 
 export default function Component() {
-  const { course, loading, error } = UseCourseHooks();
   const scrollRef = useRef<HTMLDivElement | null>(null);
 
   const courses: Course[] = [

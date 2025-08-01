@@ -60,7 +60,7 @@ interface Course {
 interface UseCourseHooksReturn {
   course: Course | null
   loading: boolean
-  error: any
+  error: unknown
 }
 
 const tabs: Tab[] = [
@@ -75,7 +75,7 @@ const tabs: Tab[] = [
 ]
 
 export default function CourseDetails() {
-  const { course, loading, error } = UseCourseHooks() as UseCourseHooksReturn
+  const { course} = UseCourseHooks() as UseCourseHooksReturn
   const [activeTab, setActiveTab] = useState<string>("instructor")
   const [currentTabIndex, setCurrentTabIndex] = useState<number>(0)
   const sectionRefs = useRef<Record<string, HTMLElement | null>>({})
@@ -237,7 +237,7 @@ export default function CourseDetails() {
                 {featuresInfo.map((feature, id) => (
                   <div key={id} className="flex items-start space-x-3">
                     <div className="w-16 rounded-full">
-                      <img src={feature?.icon || "/placeholder.svg"} alt="Feature icon" />
+                      <Image src={feature?.icon || "/placeholder.svg"} width={400} height={400} alt="Feature icon" />
                     </div>
                     <div>
                       <h3 className="text-white font-semibold mb-2">{feature?.title}</h3>

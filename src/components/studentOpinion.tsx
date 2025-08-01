@@ -15,7 +15,7 @@ interface CourseSection {
 
 interface Course {
   sections: CourseSection[];
-  [key: string]: any; 
+  [key: string]: unknown; 
 }
 
 interface CourseMediaItem {
@@ -29,14 +29,14 @@ interface CourseMediaItem {
 }
 
 export default function Component() {
-  const { course, loading, error } = UseCourseHooks() as { course: Course | null; loading: boolean; error: any };
+  const { course} = UseCourseHooks() as { course: Course | null };
   const scrollRef = useRef<HTMLDivElement | null>(null);
   const [playingVideo, setPlayingVideo] = useState<string | number | null>(null);
 
   // Find testimonial section from course.sections
   const courseMediaSection = course?.sections.find(
-    (section: any) => section.type === "testimonials"
-  );
+  (section: CourseSection) => section.type === "testimonials"
+)
   const courses: CourseMediaItem[] = courseMediaSection?.values || [];
 
   const scrollLeft = () => {

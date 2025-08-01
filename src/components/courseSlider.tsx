@@ -31,7 +31,7 @@ export default function CourseSlider() {
   const { course, loading, error } = UseCourseHooks() as {
     course: Course | null | undefined;
     loading: boolean;
-    error?: any;
+    error?: unknown;
   };
 
   const mediaItems: MediaItem[] = Array.isArray(course?.media) ? course.media : [];
@@ -181,7 +181,7 @@ export default function CourseSlider() {
             </div>
             {checkListItems.map((checkItem, id) => (
               <div key={id} className="flex items-center gap-3">
-                {checkItem?.icon && <img src={checkItem.icon} alt="icon" className="w-5 h-5 object-contain" />}
+                {checkItem?.icon && <Image src={checkItem.icon} alt="icon" width={100} height={100} className="w-5 h-5 object-contain" />}
                 <span>{checkItem?.text}</span>
               </div>
             ))}
